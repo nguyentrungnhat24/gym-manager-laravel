@@ -46,7 +46,7 @@
                 <p>Stamina Gym cung cấp các dịch vụ chuyên nghiệp để giúp bạn đạt được mục tiêu fitness</p>
             </div>
         </div>
-        
+
         <div class="row">
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="feature-item text-center">
@@ -58,7 +58,7 @@
                     <a href="{{ route('user.classes') }}" class="btn btn-primary">Xem lớp tập</a>
                 </div>
             </div>
-            
+
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="feature-item text-center">
                     <div class="icon mb-3">
@@ -69,7 +69,7 @@
                     <a href="{{ route('user.trainer') }}" class="btn btn-primary">Gặp PT</a>
                 </div>
             </div>
-            
+
             <div class="col-lg-4 col-md-6 mb-4">
                 <div class="feature-item text-center">
                     <div class="icon mb-3">
@@ -90,7 +90,9 @@
         <div class="row align-items-center">
             <div class="col-lg-6">
                 <h2 class="heading mb-4">Về Stamina Gym</h2>
-                <p>Stamina Gym là phòng tập chuyên nghiệp với trang thiết bị hiện đại, không gian rộng rãi và đội ngũ huấn luyện viên giàu kinh nghiệm. Chúng tôi cam kết mang đến cho bạn môi trường tập luyện tốt nhất để đạt được mục tiêu fitness.</p>
+                <p>Stamina Gym là phòng tập chuyên nghiệp với trang thiết bị hiện đại, không gian rộng rãi và đội ngũ
+                    huấn luyện viên giàu kinh nghiệm. Chúng tôi cam kết mang đến cho bạn môi trường tập luyện tốt nhất
+                    để đạt được mục tiêu fitness.</p>
                 <ul class="list-unstyled">
                     <li><i class="icon-check text-primary"></i> Trang thiết bị hiện đại</li>
                     <li><i class="icon-check text-primary"></i> Huấn luyện viên chuyên nghiệp</li>
@@ -119,14 +121,16 @@
 </div>
 
 <!-- Video background nếu cần -->
-<a id="bgndVideo" class="player" data-property="{videoURL:'https://www.youtube.com/watch?v=w-cRWOjlk8c',showYTLogo:false, showAnnotations: false, showControls: false, cc_load_policy: false, containment:'#home-section',autoPlay:true, mute:true, startAt:255, stopAt: 271, opacity:1}">
+<a id="bgndVideo" class="player"
+    data-property="{videoURL:'https://www.youtube.com/watch?v=w-cRWOjlk8c',showYTLogo:false, showAnnotations: false, showControls: false, cc_load_policy: false, containment:'#home-section',autoPlay:true, mute:true, startAt:255, stopAt: 271, opacity:1}">
 </a>
 @endsection
 
 @push('styles')
 <style>
 .intro-section {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('{{ asset("user/images/bg_1.jpg") }}') no-repeat center center;
+    background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+    url('{{ asset("user/images/bg_1.jpg") }}') no-repeat center center;
     background-size: cover;
     min-height: 100vh;
     display: flex;
@@ -153,7 +157,7 @@
     padding: 30px 20px;
     background: white;
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     height: 100%;
 }
 
@@ -186,11 +190,11 @@ $(document).ready(function() {
     if (typeof $.fn.mb_YTPlayer !== 'undefined') {
         $("#bgndVideo").mb_YTPlayer();
     }
-    
+
     // Smooth scroll cho các link
     $('a[href^="#"]').on('click', function(event) {
         var target = $(this.getAttribute('href'));
-        if( target.length ) {
+        if (target.length) {
             event.preventDefault();
             $('html, body').stop().animate({
                 scrollTop: target.offset().top

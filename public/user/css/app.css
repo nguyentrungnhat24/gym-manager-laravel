@@ -107,7 +107,8 @@ body {
     background: linear-gradient(90deg, #232526 0%, #434343 100%);
     box-shadow: 0 4px 24px rgba(0,0,0,0.10);
     padding: 1rem 0 1rem 0;
-    
+    position: relative;
+    z-index: 9999;
     transition: background 0.3s, box-shadow 0.3s;
 }
 #ftco-navbar .navbar-brand {
@@ -209,4 +210,9 @@ body {
 
 #ftco-navbar .navbar-nav .nav-link {
     white-space: nowrap;
+}
+
+.intro-section::before,
+.intro-section::after {
+    pointer-events: none;
 }
