@@ -1,66 +1,204 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Gym Management System
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Web application for managing a gym center, built with Laravel 10. The project includes separate flows for administrators and customers, covering authentication, training package management, trainers, schedules, equipment, cart/checkout, and profile management.
 
-## About Laravel
+## Overview
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+This project was developed as a team project for practicing full-stack web development with Laravel and MySQL. The application combines an admin management area and a customer-facing area:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+- Admin area:
+  manage staff, customers, trainers, training packages, schedules, equipment, and summary statistics
+- User area:
+  browse classes, view trainers and schedules, add packages to cart, checkout, and manage profile information
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Main Features
 
-## Learning Laravel
+### Authentication
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+- Sign in / sign up
+- Logout
+- Role-based redirection after login
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### Admin Features
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 2000 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+- Dashboard with overview statistics
+- Manage staff
+- Manage customers
+- Manage personal trainers
+- Manage training packages
+- Manage training schedules
+- Manage equipment and equipment categories
+- View package statistics
 
-## Laravel Sponsors
+### User Features
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+- Home page and gym introduction pages
+- Browse training classes and class details
+- View schedules and trainers
+- Add packages to cart
+- Checkout and order flow
+- View and edit profile
+- BMI page
+- Contact page
 
-### Premium Partners
+## Tech Stack
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
+- Backend: PHP, Laravel 10
+- Database: MySQL
+- Frontend: Blade, HTML, CSS, JavaScript
+- Build tool: Vite
+- Authentication: Laravel Auth with customized user fields
 
-## Contributing
+## Project Structure
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```text
+app/
+  Http/
+    Controllers/
+      Admin/        # Admin controllers
+      Auth/         # Login and registration
+      User/         # Customer-facing controllers
+  Models/           # Eloquent models
+database/
+  migrations/       # Migrations
+  seeders/          # Seed data
+resources/views/
+  admin/            # Admin Blade views
+  user/             # User Blade views
+  signin_signup/    # Authentication views
+routes/
+  web.php           # Main web routes
+public/             # Images, uploaded files, CSS, JS
+```
 
-## Code of Conduct
+## Important Routes
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+### Public
 
-## Security Vulnerabilities
+- `/` - landing page
+- `/signin` - sign in
+- `/signup` - sign up
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Admin
 
-## License
+- `/admin/trangchu` - dashboard
+- `/admin/nhanvien` - staff management
+- `/admin/khachhang` - customer management
+- `/admin/pt` - trainer management
+- `/admin/goitap` - training package management
+- `/admin/lichtap` - schedule management
+- `/admin/dungcu` - equipment management
+- `/admin/thongke` - statistics
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### User
+
+- `/user/home` - home page
+- `/user/classes` - training classes
+- `/user/class/{id}` - class details
+- `/user/schedule` - schedule
+- `/user/trainer` - trainers
+- `/user/cart` - cart
+- `/user/checkout` - checkout page
+- `/user/profile` - user profile
+- `/user/orders` - orders
+
+## Installation
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/nguyentrungnhat24/gym-manager-laravel.git
+cd gym-manager-laravel
+```
+
+### 2. Install dependencies
+
+```bash
+composer install
+npm install
+```
+
+### 3. Create environment file
+
+```bash
+cp .env.example .env
+php artisan key:generate
+```
+
+Then update your database configuration in `.env`:
+
+```env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=your_database_name
+DB_USERNAME=your_database_user
+DB_PASSWORD=your_database_password
+```
+
+### 4. Run database setup
+
+```bash
+php artisan migrate
+php artisan db:seed
+```
+
+### 5. Start the project
+
+```bash
+npm run dev
+php artisan serve
+```
+
+The application should be available at:
+
+```text
+http://127.0.0.1:8000
+```
+
+## Default Admin Account
+
+If the seeder runs successfully, the default admin account is:
+
+- Username: `admin`
+- Password: `admin123`
+
+## Notes About Database Schema
+
+This codebase contains signs of migration from an older schema to a newer Laravel-based structure. Some models and seeders use customized fields such as:
+
+- `users.username`
+- `users.password_hash`
+- `users.full_name`
+- `training_packages`
+- `training_categories`
+
+Because of that:
+
+- the current migrations may not fully match the models used by the application
+- you may need to adjust migrations or import the original database schema for the project to work completely
+- some legacy field mappings are handled directly inside models
+
+If you are setting the project up from scratch, review the models and migrations carefully before relying on `php artisan migrate` alone.
+
+## Development Notes
+
+- The project uses mostly server-rendered Blade views
+- Static assets are stored under `public/`
+- Uploaded images are stored in `public/uploaded` and `public/admin/uploaded`
+- Authentication logic is customized to use `username` and `password_hash`
+
+## Future Improvements
+
+- Normalize database schema and migrations
+- Protect admin routes with dedicated middleware
+- Replace debug/fix routes with artisan commands or admin-only tools
+- Add automated tests for checkout and authentication flows
+- Improve validation and error handling across forms
+
+## Author
+
+Nguyen Trung Nhat
+
+- GitHub: https://github.com/nguyentrungnhat24
+
